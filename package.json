@@ -1,0 +1,33 @@
+{
+  "name": "date_christian_single",
+  "version": "1.0.0",
+  "description": "Handles the endpoints for the Date christian single app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abako220/date_christain_single.git"
+  },
+  "keywords": [
+    "date",
+    "christian",
+    "single",
+    "api",
+    "nodejs"
+  ],
+  "author": "Valentine Abako",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abako220/date_christain_single/issues"
+  },
+  "homepage": "https://github.com/abako220/date_christain_single#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongodb": "^3.0.10"
+  }
+}
