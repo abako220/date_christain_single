@@ -13,11 +13,27 @@ var Schema = mongoose.Schema;
                     type: String,
                     required: [true,'Password is Required']
                 },
+                
                 isActive: Boolean,
                 location: String,
+
                 meta:{
-                    age:{type:Number, required:[true,'Age is Required'],max:[3, 'Age Must not be More Than Three Digits'], min:[2, 'Age must be two or three Digits'], default:0},
-                    email:{type: String, required:true, min:4, unique:true},
+                    age:{
+                        type:Number, 
+                        required:[true,'Age is Required'],
+                        max:[3, 'Age Must not be More Than Three Digits'], 
+                        min:[2, 'Age must be two or three Digits'], 
+                        default:0
+                        },
+
+                    email: {
+                        type: String,
+                        required: true,
+                        min: 4,
+                        unique: true,
+                        lowercase: true,
+                        trim: true
+                    },
                     height:{type: Float32Array, required:true, max:4},
                     colour:{type: String, required:true},
                     phoneNumber: {
@@ -30,21 +46,28 @@ var Schema = mongoose.Schema;
                         },
                         required: [true, 'User phone number required']
                     },
+
                     state:{
                         type: String, 
-                        required:[true, 'State is Required']},
+                        required:[true, 'State is Required']
+                          },
+
                         country: {
                             type: String, 
-                            required:[true, 'Country is Required']},
+                            required:[true, 'Country is Required']
+                            },
+
                         lga: {
                             type: String, 
-                            required: [true, 'Local Government Area Required']},
+                            required: [true, 'Local Government Area Required']
+                            },
+
                         geneNoType: {
                             enum: ['AA', 'AS', 'SS']},
                         bloodGroup:{
                             enum:['0+', '0-','AB+', 'A+','B+','AB-','A-','B-']},
 
-                    },
+                        },
                         region: {
                             type: String,
                             required: [true, 'Region is Required']
@@ -54,14 +77,17 @@ var Schema = mongoose.Schema;
                             type: String,
                             required: [true, 'Instagram name is Required']
                         },
+
                         imagePath:{
                             type: String,
                             required: [true, 'Required']
                         },
+
                         userID: {
                             type: String,
                             unique: true
                         },
+
                         min_desired_age: {
                             type: Number,
                             max: [3, 'Age Cannot be More than 3 Digits'],
@@ -96,7 +122,10 @@ var Schema = mongoose.Schema;
                         status: String,
 
                         created_at: Date,
-                        updated_at: Date
+                        updated_at: {
+                            type: Date,
+                            default: Date.now
+                        }
 
 
                 });
