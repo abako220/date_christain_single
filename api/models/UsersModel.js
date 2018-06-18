@@ -3,7 +3,22 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
     var userSchema = new Schema({
-                name: String,
+                surname: {
+                    type: String,
+                    required: [true, 'Surname is Required'],
+
+                },
+                first_name: {
+                    type: String,
+                    required: [true, 'First_name is Required'],
+
+                },
+
+                other_name: {
+                    type: String,
+                    required: [true, 'Other_name is Required'],
+
+                },
                 username: {
                     type: String,
                     required: [true,'Username is Required'],
@@ -13,7 +28,7 @@ var Schema = mongoose.Schema;
                     type: String,
                     required: [true,'Password is Required']
                 },
-                
+
                 isActive: Boolean,
                 location: String,
 
@@ -63,7 +78,8 @@ var Schema = mongoose.Schema;
                             },
 
                         geneNoType: {
-                            enum: ['AA', 'AS', 'SS']},
+                            enum: ['AA', 'AS', 'SS']
+                            },
                         bloodGroup:{
                             enum:['0+', '0-','AB+', 'A+','B+','AB-','A-','B-']},
 
