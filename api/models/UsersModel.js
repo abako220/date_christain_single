@@ -44,7 +44,7 @@ var Schema = mongoose.Schema;
                     email: {
                         type: String,
                         required: true,
-                        min: 4,
+                        minlength: 4,
                         unique: true,
                         lowercase: true,
                         trim: true

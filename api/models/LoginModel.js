@@ -36,13 +36,8 @@ var Schema = mongoose.Schema;
 
         },
 
-        other_name: {
-            type: String,
-            required: [true, 'Other_name is Required'],
-
-        },
-
-
+        other_name: String
+      
     });
 
 var login = mongoose.model('LoginModel', loginSchema);
