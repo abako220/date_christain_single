@@ -19,7 +19,11 @@ var Schema = mongoose.Schema;
             required: [true, 'Username Required']
         },
 
-        created_at: Date,
+        created_at: {
+            type: Date,
+            default: Date.now
+        },
+        
         updated_at: {
             type: Date,
             default: Date.now
